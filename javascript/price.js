@@ -24,15 +24,28 @@ console.log(distanceTravel, typeof distanceTravel);
 
 if (!distanceTravel) {
     alert('inserire un numero per calcolare il prezzo del biglietto')
-} 
+};
 
 const agePassenger = Math.abs(parseInt(prompt('inserire età del passeggero'))); //number | NaN
 console.log(agePassenger, typeof agePassenger);
 
 if (!agePassenger) {
     alert('inserire un numero per calcolare il prezzo del biglietto')
-} 
+};
 
 // price ticket
-// const priceTicket = 0.21 * distanceTravelNumber //number | NaN
+const priceTicket = 0.21 * distanceTravel; //number | NaN
 // console.log(priceTicket, typeof priceTicket);
+
+const discount20 = (20 * priceTicket) / 100; //number | NaN
+const discount40 = (40 * priceTicket) / 100; //number | NaN
+
+if (agePassenger < 18) {
+    priceTicketJunior = priceTicket - discount20
+    console.log(priceTicketJunior.toFixed(2))
+} else if (agePassenger > 65) {
+    priceTicketSenior = priceTicket - discount40
+    console.log(priceTicketSenior.toFixed(2))
+} else {10
+    console.log(priceTicket.toFixed(2))
+}
