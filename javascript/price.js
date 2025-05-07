@@ -3,7 +3,7 @@ console.log('price');
 // input user
 
 const distanceTravel = Math.abs(parseInt(prompt('inserire la distanza in chilometri del tragitto'))); //number | NaN
-console.log(`La distanza da percorrere è di ${distanceTravel}Km`);
+console.log(`La distanza da percorrere è di ${distanceTravel} Km`);
 
 const agePassenger = Math.abs(parseInt(prompt('inserire età del passeggero'))); //number | NaN
 console.log(`L'età del passeggero è ${agePassenger}`);
@@ -22,18 +22,21 @@ if (!distanceTravel || !agePassenger) {
     console.log("Errore: Input non valido.");
 } else {
     if (agePassenger < 18) {
-        priceTicketJunior = priceTicket - discount20;
-        alert(`il prezzo del biglietto è : ${priceTicketJunior.toFixed(2)}€`);
-        console.log(`il prezzo del biglietto è : ${priceTicketJunior.toFixed(2)}€`);
+        priceTicketResult = priceTicket - discount20;
     } else if (agePassenger > 65) {
-        priceTicketSenior = priceTicket - discount40
-        alert(`il prezzo del biglietto è : ${priceTicketSenior.toFixed(2)}€`);
-        console.log(`il prezzo del biglietto è : ${priceTicketSenior.toFixed(2)}€`);
+        priceTicketResult = priceTicket - discount40
     } else {
-        alert(`il prezzo del biglietto è : ${priceTicket.toFixed(2)}€`);
-        console.log(`il prezzo del biglietto è : ${priceTicket.toFixed(2)}€`);
+        priceTicketResult = priceTicket
     }
+    alert(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
+    console.log(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
 };
+
+
+
+
+
+
 
 
 
@@ -50,16 +53,13 @@ if (agePassenger <= 0 || distanceTravel <= 0 || !agePassenger || !distanceTravel
     console.log("Errore: Input non valido.");
 } else {
     if (agePassenger < 18) {
-        priceTicketJunior = priceTicket - discount20;
-        alert(`il prezzo del biglietto è : ${priceTicketJunior.toFixed(2)}€`);
-        console.log(`il prezzo del biglietto è : ${priceTicketJunior.toFixed(2)}€`);
+        priceTicketResult = priceTicket - discount20;
     } else if (agePassenger > 65) {
-        priceTicketSenior = priceTicket - discount40
-        alert(`il prezzo del biglietto è : ${priceTicketSenior.toFixed(2)}€`);
-        console.log(`il prezzo del biglietto è : ${priceTicketSenior.toFixed(2)}€`);
+        priceTicketResult = priceTicket - discount40
     } else {
-        alert(`il prezzo del biglietto è : ${priceTicket.toFixed(2)}€`);
-        console.log(`il prezzo del biglietto è : ${priceTicket.toFixed(2)}€`);
-    };
+        priceTicketResult = priceTicket
+    }
+    alert(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
+    console.log(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
 }
 */
