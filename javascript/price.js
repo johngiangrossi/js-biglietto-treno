@@ -1,8 +1,10 @@
-console.log('price');
+console.log('price train');
+
+const PRICE_FOR_KM = 0.21  //number
 
 // input user
 
-const distanceTravel = Math.abs(parseInt(prompt('inserire la distanza in chilometri del tragitto'))); //number | NaN
+const distanceTravel = Math.abs(parseFloat(prompt('inserire la distanza in chilometri del tragitto'))); //number | NaN
 console.log(`La distanza da percorrere è di ${distanceTravel} Km`);
 
 const agePassenger = Math.abs(parseInt(prompt('inserire età del passeggero'))); //number | NaN
@@ -13,10 +15,10 @@ console.log(`L'età del passeggero è ${agePassenger}`);
 // console.log(distanceTravelString);
 // console.log(distanceTravelNumber);
 
-const priceTicket = 0.21 * distanceTravel; //number | NaN
+const priceTicket = PRICE_FOR_KM * distanceTravel; //number | NaN
 const discount20 = (20 * priceTicket) / 100; //number | NaN
 const discount40 = (40 * priceTicket) / 100; //number | NaN
-
+priceTicketResult = priceTicket
 if (!distanceTravel || !agePassenger) {
     alert('Errore: inserire un numero o età valido');
     console.log("Errore: Input non valido.");
@@ -25,14 +27,18 @@ if (!distanceTravel || !agePassenger) {
         priceTicketResult = priceTicket - discount20;
     } else if (agePassenger > 65) {
         priceTicketResult = priceTicket - discount40
-    } else {
-        priceTicketResult = priceTicket
-    }
-    alert(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
-    console.log(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
+    } 
 };
 
-
+alert(`il prezzo del biglietto è : ${
+  new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(
+    priceTicketResult,
+  )}`);
+console.log(`il prezzo del biglietto è : ${
+  new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(
+    priceTicketResult,
+  )}`
+);
 
 
 
@@ -42,11 +48,12 @@ if (!distanceTravel || !agePassenger) {
 
 
 /*
-const distanceTravel = parseInt(prompt('inserire la distanza in chilometri del tragitto')); //number | NaN
+const distanceTravel = parseFloat(prompt('inserire la distanza in chilometri del tragitto')); //number | NaN
 const agePassenger = parseInt(prompt('inserire età del passeggero'));  //number | NaN
-const priceTicket = 0.21 * distanceTravel; //number | NaN
+const priceTicket = PRICE_FOR_KM * distanceTravel; //number | NaN
 const discount20 = (20 * priceTicket) / 100; //number | NaN
 const discount40 = (40 * priceTicket) / 100; //number | NaN
+priceTicketResult = priceTicket
 
 if (agePassenger <= 0 || distanceTravel <= 0 || !agePassenger || !distanceTravel) {
     alert('Errore: inserire un numero o età valido');
@@ -56,10 +63,15 @@ if (agePassenger <= 0 || distanceTravel <= 0 || !agePassenger || !distanceTravel
         priceTicketResult = priceTicket - discount20;
     } else if (agePassenger > 65) {
         priceTicketResult = priceTicket - discount40
-    } else {
-        priceTicketResult = priceTicket
-    }
-    alert(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
-    console.log(`il prezzo del biglietto è : ${priceTicketResult.toFixed(2)} €`);
-}
-*/
+    } 
+};
+
+alert(`il prezzo del biglietto è : ${
+  new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(
+    priceTicketResult,
+  )}`);
+console.log(`il prezzo del biglietto è : ${
+  new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(
+    priceTicketResult,
+  )}`
+);*/
